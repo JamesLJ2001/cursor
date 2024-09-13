@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日历</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ month_name }} {{ year }}</h1>
+        <div class="navigation">
+            <button id="prev-month">&lt; 上个月</button>
+            <select id="year-select">
+                {% for y in range(2015, 2026) %}
+                    <option value="{{ y }}" {% if y == year %}selected{% endif %}>{{ y }}</option>
+                {% endfor %}
+            </select>
+            <select id="month-select">
+                {% for m in range(1, 13) %}
+                    <option value="{{ m }}" {% if m == month %}selected{% endif %}>{{ month_names[m-1] }}</option>
+                {% endfor %}
+            </select>
+            <button id="next-month">下个月 &gt;</button>
+        </div>
+        <div class="calendar-wrapper">
+            <div class="calendar-container">
+                <table id="calendar-table">
+                    <tr>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                        <th>日</th>
+                    </tr>
+                    {% for week in calendar %}
+                        <tr>
+                            {% for day in week %}
+                                {% if day != 0 %}
+                                    <td>{{ day }}</td>
+                                {% else %}
+                                    <td class="other-month"></td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #1d1d1f;
+    font-weight: 700;
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.navigation button, .navigation select {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navigation button:hover, .navigation select:hover {
+    background-color: #e5e5e7;
+}
+
+.navigation select {
+    margin: 0 15px;
+}
+
+.calendar-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.calendar-container {
+    transition: transform 0.5s ease-in-out;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: white;
+}
+
+th, td {
+    border: none;
+    padding: 18px;
+    text-align: center;
+}
+
+th {
+    background-color: #ffffff;
+    color: #86868b;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+td {
+    color: #1d1d1f;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: #f5f5f7;
+}
+
+.today {
+    border: 2px solid #0071e3;
+    color: #0071e3;
+    font-weight: 700;
+}
+
+.selected {
+    background-color: #0071e3;
+    color: white;
+    font-weight: 700;
+}
+
+.today.selected {
+    background-color: #0071e3;
+    color: white;
+}
+
+.other-month {
+    color: #86868b;
+    font-weight: 400;
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes slideRight {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.slide-left {
+    animation: slideLeft 0.5s forwards;
+}
+
+.slide-right {
+    animation: slideRight 0.5s forwards;
+}
