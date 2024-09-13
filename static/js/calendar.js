@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         newCalendar.style.position = 'absolute';
         newCalendar.style.top = '0';
         newCalendar.style.left = direction === 'right' ? '100%' : '-100%';
+        newCalendar.style.width = '100%';
         calendarWrapper.appendChild(newCalendar);
 
         fetch(`/get_calendar?year=${yearSelect.value}&month=${monthSelect.value}`)
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     oldCalendar.remove();
                     newCalendar.style.position = 'static';
                     newCalendar.style.left = '0';
+                    newCalendar.style.width = '100%';
                 }, 500);
             });
     }
